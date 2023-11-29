@@ -1,11 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Api from './api/Api'
-
+import { Footer } from './Components/Footer'
+import { Header } from './Components/Header'
+import { Home } from './Components/Home'
+import { Login } from './Components/Login/Login'
+ 
 const App = () => {
   return (
-    <>
-      <Api />
-    </>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/login/*' element={<Login/>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   )
 }
 
