@@ -8,11 +8,8 @@ body{
     --type-first: Lato, sans-serif;
     font-family: var(--type-first);
 }
-h1, h2, h3,h4{
+h1, h2, h3,h4, p{
     margin: 0;
-}
-a{
-    text-decoration: none;
 }
 ul, li{
     list-style: none;
@@ -28,6 +25,9 @@ button, input{
     font-size: 1rem;
     font-family: var(--type-first);
     color: #333;
+}
+a{
+    text-decoration: none;
 }
 .container{
     max-width: 800px;
