@@ -1,24 +1,19 @@
+import React from 'react';
 
-import React from "react"
+export const useMedia = (media) => {
+  const [match, setMatch] = React.useState(null);
 
-export const useMedia = () => {
+  React.useEffect(() => {
+    function changeMatch() {
+      const { matches } = window.matchMedia(media);
+      setMatch(matches);
+    }
+    changeMatch();
+    window.addEventListener('resize', changeMatch);
+    return () => {
+      window.removeEventListener('resize', changeMatch);
+    };
+  }, [media]);
 
-    const [match, setMatch] = React.useState(null)
-
-    React.useEffect(() => {
-        function chageMatch() {
-            const {matches} = window.matchMedia(media)
-            setMatch(matches)
-        }
-        window.addEventListener('resize', chageMatch)
-        return() => {
-            window.removeEventListener('resize', chageMatch)
-        }
-    })
-
-    return(
-        <div>
-
-        </div>
-    )
-}
+  return match;
+};
