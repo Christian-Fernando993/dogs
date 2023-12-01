@@ -35,6 +35,10 @@ a{
     padding: 0 1rem;
     margin: 0 auto;
 }
+.mainContainer{
+    margin-top: 4rem;
+}
+
 .title{
     font-family: var(--type-first);
     line-height: 1;
