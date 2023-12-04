@@ -12,6 +12,7 @@
   "dependencies": {
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-components": "^0.5.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
     "vite-plugin-svgr": "^4.2.0"
