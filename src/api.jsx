@@ -79,6 +79,18 @@ export function PHOTO_GET(id) {
   };
 }
 
+export function PHOTO_DELETE(id) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+    },
+  };
+}
+
 export function COMMENT_POST(id, body) {
   return {
     url: `${API_URL}/api/comment/${id}`,
@@ -89,18 +101,6 @@ export function COMMENT_POST(id, body) {
         Authorization: 'Bearer ' + window.localStorage.getItem('token'),
       },
       body: JSON.stringify(body)
-    },
-  };
-}
-
-export function PHOTO_DELETE(id) {
-  return {
-    url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-      },
     },
   };
 }
@@ -133,7 +133,7 @@ export function PASSWORD_RESET(body) {
 
 export function STATS_GET(){
   return{
-    url: API_URL + '/api/status',
+    url: API_URL + '/api/stats',
     options: {
       method: 'GET',
       headers: {

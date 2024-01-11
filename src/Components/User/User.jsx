@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import { UserHeader } from './UserHeader'
 import { Feed } from '../Feed/Feed'
 import { UserPhotoPost } from './UserPhotoPost'
-import { UserStatus } from './UserStatus'
+import { UserStats } from './UserStats';
 import { UserContext } from '../../UserContext'
 import { NotFound } from '../NotFound'
 import { Head } from '../Helper/Head'
@@ -19,7 +19,7 @@ export const User = () => {
       <Routes>
         <Route path="/" element={<Feed user={data.id} />} />
         <Route path="postar" element={<UserPhotoPost />} />
-        <Route path="estatisticas" element={<UserStatus />} />
+        <Route path="estatisticas" element={<UserStats />} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
     </section>

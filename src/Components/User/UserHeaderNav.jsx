@@ -9,12 +9,15 @@ import Sair from "../../Assets/sair.svg";
 import { useMedia } from "../../Hooks/useMedia";
 
 export const UserHeaderNav = () => {
+
   const { userLogout } = React.useContext(UserContext);
   const navigate = useNavigate();
+
   function handleLogout() {
     userLogout();
     navigate("/login");
   }
+
   const mobile = useMedia("(max-width: 40rem)");
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
@@ -25,27 +28,22 @@ export const UserHeaderNav = () => {
 
   return (
     <>
-      {mobile && (
-        <button
-          aria-label="Menu"
-          className={`
-            ${styles.mobileButton} 
-            ${mobileMenu && styles.mobileButtonActive} `}
-          onClick={() => setMobileMenu(!mobileMenu)}
-        ></button>
+      
+      {mobile && ( 
+        <button 
+          aria-label="Menu" 
+          className={`${styles.mobileButton}  ${mobileMenu && styles.mobileButtonActive} `} 
+          onClick={() => setMobileMenu(!mobileMenu)}></button> 
       )}
-      <nav
-        className={` ${mobile ? styles.navMobile : styles.nav} ${
-          mobileMenu && styles.navMobileActive
-        }`}
-      >
+      
+      <nav className={` ${mobile ? styles.navMobile : styles.nav} ${ mobileMenu && styles.navMobileActive }`} >
         <NavLink to="/conta" end>
           <img src={MinhasFotos} alt="Minhas Fotos" />
-          {mobile && "Minas Fotos"}
+          {mobile && "Minhas Fotos"}
         </NavLink>
-        <NavLink to="/conta/estatistica">
+        <NavLink to="/conta/estatisticas">
           <img src={Estatisticas} alt="Estatisticas" />
-          {mobile && "Estatísticas"}
+          {mobile && 'Estatísticas'}
         </NavLink>
         <NavLink to="/conta/postar">
           <img src={AdicionarFoto} alt="Adicionar Foto" />

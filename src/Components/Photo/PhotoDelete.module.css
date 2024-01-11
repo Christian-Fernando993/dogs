@@ -13,6 +13,6 @@
 .delete:hover{
     outline: none;
     background: white;
-    box-shadow: 0 0 03px #eee;
+    box-shadow: 0 0 0 3px #eee;
     border-color: #333;
 }
